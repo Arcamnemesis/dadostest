@@ -4,32 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dado Controlable</title>
-    <style>
-        body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f0f0f0; }
-        .dado { font-size: 80px; cursor: pointer; text-align: center; border: 2px solid #333; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 10px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="dado" id="dado">1</div>
-
-<script>
-    const dado = document.getElementById("dado");
-
-    // Función para cambiar el resultado del dado
-    function cambiarResultado() {
-        // Pedir al dueño que introduzca el número deseado
-        const resultado = prompt("Elige el resultado del dado (1 a 6):");
-        if (resultado >= 1 && resultado <= 6) {
-            dado.textContent = resultado;
-        } else {
-            alert("Por favor, introduce un número entre 1 y 6.");
-        }
-    }
-
-    // Detección de clic o toque para cambiar el resultado
-    dado.addEventListener("click", cambiarResultado);
-</script>
-
+    <div class="container">
+        <div class="dado" id="dado">1</div>
+        <button id="tirarDado">Tirar Dado</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
