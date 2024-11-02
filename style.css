@@ -1,3 +1,4 @@
+/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,39 +6,57 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #fff;
 }
 
 .container {
     text-align: center;
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 .dado {
     font-size: 80px;
-    color: #333;
-    border: 2px solid #333;
+    color: #fff;
     width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
-    border-radius: 10px;
+    background: #333;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s, background-color 0.3s;
     margin: 20px auto;
-    transition: transform 0.6s;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #007acc;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #005bb5;
 }
 
 .dado.tirando {
-    animation: giro 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: giroSuave 1.2s ease-in-out;
 }
 
-@keyframes giro {
+@keyframes giroSuave {
     0% { transform: rotateX(0) rotateY(0); }
-    100% { transform: rotateX(720deg) rotateY(720deg); }
+    50% { transform: rotateX(360deg) rotateY(180deg); }
+    100% { transform: rotateX(720deg) rotateY(360deg); }
 }
