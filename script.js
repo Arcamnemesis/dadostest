@@ -4,6 +4,7 @@ let contadorTiradas = 0;
 
 // Función para lanzar el dado
 function tirarDado() {
+    console.log("Botón presionado para tirar el dado"); // Depuración
     // Añadir clase para animación
     dado.classList.add("tirando");
 
@@ -24,6 +25,7 @@ function tirarDado() {
         } else {
             dado.textContent = Math.floor(Math.random() * 6) + 1;
         }
+        console.log("Resultado mostrado en dado:", dado.textContent); // Depuración
     }, 1200);
 }
 
