@@ -1,17 +1,8 @@
 const dado = document.getElementById("dado");
 const tirarDadoBtn = document.getElementById("tirarDado");
+let contadorTiradas = 0;
 
-// Función para cambiar el resultado del dado
-function cambiarResultado() {
-    const resultado = prompt("Elige el resultado del dado (1 a 6):");
-    if (resultado >= 1 && resultado <= 6) {
-        dado.textContent = resultado;
-    } else {
-        alert("Por favor, introduce un número entre 1 y 6.");
-    }
-}
-
-// Función para animar el dado
+// Función para lanzar el dado
 function tirarDado() {
     // Añadir clase para animación
     dado.classList.add("tirando");
@@ -20,12 +11,52 @@ function tirarDado() {
     let resultadoAleatorio = Math.floor(Math.random() * 6) + 1;
     dado.textContent = resultadoAleatorio;
 
-    // Después de 600ms, permite elegir resultado y reinicia animación
+    // Incrementar el contador de tiradas
+    contadorTiradas++;
+
+    // Después de la animación, mostrar 5 cada dos tiradas o un número aleatorio
     setTimeout(() => {
-        cambiarResultado();
         dado.classList.remove("tirando");
-    }, 600);
+        
+        // Si el contador de tiradas es par, mostrar siempre 5, sino mostrar aleatorio
+        if (contadorTiradas % 2 === 0) {
+            dado.textContent = 5;
+        } else {
+            dado.textContent = Math.floor(Math.random() * 6) + 1;
+        }
+    }, 1200);
 }
 
-// Evento para botón de tirar dado
+// Evento para el botón de tirar dado
+tirarDadoBtn.addEventListener("click", tirarDado);
+const dado = document.getElementById("dado");
+const tirarDadoBtn = document.getElementById("tirarDado");
+let contadorTiradas = 0;
+
+// Función para lanzar el dado
+function tirarDado() {
+    // Añadir clase para animación
+    dado.classList.add("tirando");
+
+    // Seleccionar un número aleatorio temporal mientras se lanza
+    let resultadoAleatorio = Math.floor(Math.random() * 6) + 1;
+    dado.textContent = resultadoAleatorio;
+
+    // Incrementar el contador de tiradas
+    contadorTiradas++;
+
+    // Después de la animación, mostrar 5 cada dos tiradas o un número aleatorio
+    setTimeout(() => {
+        dado.classList.remove("tirando");
+        
+        // Si el contador de tiradas es par, mostrar siempre 5, sino mostrar aleatorio
+        if (contadorTiradas % 2 === 0) {
+            dado.textContent = 5;
+        } else {
+            dado.textContent = Math.floor(Math.random() * 6) + 1;
+        }
+    }, 1200);
+}
+
+// Evento para el botón de tirar dado
 tirarDadoBtn.addEventListener("click", tirarDado);
