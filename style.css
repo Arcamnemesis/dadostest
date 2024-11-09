@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #3b5998, #f7b42c);
+    background-color: #000;
     color: #fff;
     height: 100vh;
     text-align: center;
@@ -18,48 +18,54 @@ body {
     animation: fadeInDown 1.5s ease-out;
 }
 
-.logo {
-    width: 100px;
-    height: auto;
+.titulo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#000, #ff4d4d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: bounce 2s infinite;
 }
 
-.titulo {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
 .slogan {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-style: italic;
     margin-top: 5px;
-    color: #ffe600;
+    color: #ff9999;
 }
 
 .contenido {
     animation: fadeInUp 1.5s ease-out;
 }
 
+.descripcion {
+    font-size: 1.2rem;
+    margin: 20px auto;
+    max-width: 600px;
+    color: #ccc;
+}
+
 .boton {
     padding: 15px 30px;
     font-size: 1rem;
     color: #fff;
-    background: #e63946;
+    background: #ff4d4d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
     transition: background 0.3s ease;
 }
 
 .boton:hover {
-    background: #b32739;
+    background: #cc0000;
 }
 
 .footer {
     margin-top: 30px;
     font-size: 0.9rem;
+    color: #ffcccc;
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -72,29 +78,7 @@ body {
     text-decoration: underline;
 }
 
-.container {
-    text-align: center;
-}
-
-.dado {
-    font-size: 80px;
-    color: #fff;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #333;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.5s, background-color 0.3s;
-    margin: 20px auto;
-}
-
-.dado.tirando {
-    animation: giroSuave 1.2s ease-in-out;
-}
-
+/* Animaciones */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-50px); }
     to { opacity: 1; transform: translateY(0); }
@@ -105,19 +89,8 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-15px); }
     60% { transform: translateY(-10px); }
-}
-
-@keyframes giroSuave {
-    0% { transform: rotateX(0) rotateY(0); }
-    50% { transform: rotateX(360deg) rotateY(180deg); }
-    100% { transform: rotateX(720deg) rotateY(360deg); }
 }
