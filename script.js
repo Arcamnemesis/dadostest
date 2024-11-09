@@ -1,24 +1,29 @@
+// Redirección a la página del dado desde el botón en index.html
+document.addEventListener("DOMContentLoaded", function() {
+    const botonDado = document.getElementById("botonDado");
+
+    if (botonDado) {
+        botonDado.addEventListener("click", function() {
+            window.location.href = "dado.html";
+        });
+    }
+});
+
+// Lógica para el dado en dado.html
 const dado = document.getElementById("dado");
 const tirarDadoBtn = document.getElementById("tirarDado");
 let contadorTiradas = 0;
 
-// Función para lanzar el dado
 function tirarDado() {
-    // Añadir clase para animación
     dado.classList.add("tirando");
-
-    // Seleccionar un número aleatorio temporal mientras se lanza
     let resultadoAleatorio = Math.floor(Math.random() * 6) + 1;
     dado.textContent = resultadoAleatorio;
 
-    // Incrementar el contador de tiradas
     contadorTiradas++;
 
-    // Después de la animación, mostrar 5 cada dos tiradas seguidas o un número aleatorio
     setTimeout(() => {
         dado.classList.remove("tirando");
         
-        // Si el contador de tiradas es par, mostrar siempre 5, si es impar mostrar aleatorio
         if (contadorTiradas % 2 === 0) {
             dado.textContent = 5;
         } else {
@@ -27,5 +32,6 @@ function tirarDado() {
     }, 1200);
 }
 
-// Evento para el botón de tirar dado
-tirarDadoBtn.addEventListener("click", tirarDado);
+if (tirarDadoBtn) {
+    tirarDadoBtn.addEventListener("click", tirarDado);
+}
