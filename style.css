@@ -1,13 +1,75 @@
 /* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background: linear-gradient(135deg, #3b5998, #f7b42c);
     color: #fff;
+    height: 100vh;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 5px;
+    color: #ffe600;
+}
+
+.contenido {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.boton {
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background: #e63946;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.boton:hover {
+    background: #b32739;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.enlace-facebook {
+    color: #4267b2;
+    text-decoration: none;
+}
+
+.enlace-facebook:hover {
+    text-decoration: underline;
 }
 
 .container {
@@ -29,25 +91,29 @@ body {
     margin: 20px auto;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background: #007acc;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #005bb5;
-}
-
 .dado.tirando {
     animation: giroSuave 1.2s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-10px); }
 }
 
 @keyframes giroSuave {
