@@ -1,37 +1,8 @@
-// Redirección a la página del dado desde el botón en index.html
 document.addEventListener("DOMContentLoaded", function() {
-    const botonDado = document.getElementById("botonDado");
+    const botonRuleta = document.getElementById("botonRuleta");
 
-    if (botonDado) {
-        botonDado.addEventListener("click", function() {
-            window.location.href = "dado.html";
-        });
-    }
+    botonRuleta.addEventListener("click", function() {
+        // Redirigir a una página de ruleta (sustituye el enlace por la URL de tu ruleta)
+        window.location.href = "https://www.ejemplo.com/ruleta";
+    });
 });
-
-// Lógica para el dado en dado.html
-const dado = document.getElementById("dado");
-const tirarDadoBtn = document.getElementById("tirarDado");
-let contadorTiradas = 0;
-
-function tirarDado() {
-    dado.classList.add("tirando");
-    let resultadoAleatorio = Math.floor(Math.random() * 6) + 1;
-    dado.textContent = resultadoAleatorio;
-
-    contadorTiradas++;
-
-    setTimeout(() => {
-        dado.classList.remove("tirando");
-        
-        if (contadorTiradas % 2 === 0) {
-            dado.textContent = 5;
-        } else {
-            dado.textContent = Math.floor(Math.random() * 6) + 1;
-        }
-    }, 1200);
-}
-
-if (tirarDadoBtn) {
-    tirarDadoBtn.addEventListener("click", tirarDado);
-}
